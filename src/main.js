@@ -1,8 +1,7 @@
-import Vue from 'vue';
-import App from './App';
+const FormRow = require('./components/FormRow.vue');
 
-/* eslint-disable no-new */
-new Vue({
-  el: 'body',
-  components: { App },
-});
+module.exports = {
+  install(Vue) {
+    Vue.component('croud-form-row', FormRow);
+  },
+};
