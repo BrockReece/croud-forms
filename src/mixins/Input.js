@@ -11,7 +11,7 @@ export default {
         },
 
         placeholder: {
-            default: 'None'
+            default: 'None',
         },
 
         transparent: {

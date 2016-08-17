@@ -34,7 +34,7 @@
                         label: 'nine',
                         input: 'severn',
                     }
-                }
+                },
             },
         },
 
@@ -52,7 +52,7 @@
                 return classes
             },
             view() {
-                if (['select','radio'].indexOf(this.field.field_type) !== -1) {
+                if (['select', 'radio'].indexOf(this.field.field_type) !== -1) {
                     return `croud-${this.field.field_type}`
                 }
                 return this.field.field_type

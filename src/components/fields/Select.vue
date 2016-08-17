@@ -15,11 +15,12 @@
         computed: {
             options() {
                 return Object.keys(this.field.field_options.select_options).map((value) => {
-                    return {
+                    const obj = {
                         value: value.replace(/\-/g, '_'),
                         field_name: this.field.field_options.select_options[value],
                     }
-                });
+                    return obj
+                })
             },
         },
     }
