@@ -15,6 +15,8 @@
     import CroudSelect from './fields/Select.vue'
     import CroudRadio from './fields/Radio.vue'
 
+    import General from './fields/General.vue'
+
     export default {
         props: {
             model: {
@@ -55,7 +57,10 @@
                 if (['select', 'radio'].indexOf(this.field.field_type) !== -1) {
                     return `croud-${this.field.field_type}`
                 }
-                return this.field.field_type
+                if (['text', 'number', 'multi-checkbox', 'textarea'].indexOf(this.field.field_type) !== -1) {
+                    return this.field.field_type
+                }
+                return 'general'
             },
         },
 
@@ -66,6 +71,7 @@
             MultiCheckbox,
             CroudSelect,
             CroudRadio,
+            General,
         },
     }
 </script>
