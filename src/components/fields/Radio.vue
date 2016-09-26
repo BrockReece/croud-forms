@@ -3,7 +3,7 @@
 </template>
 
 <script>
-    import Input from '../../Mixins/Input.js'
+    import Input from '../../mixins/Input.js'
 
     export default {
         mixins: [
