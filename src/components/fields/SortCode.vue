@@ -58,7 +58,6 @@
             splitModel: {
                 deep: true,
                 handler(val) {
-                    console.log('got here')
                     this.model = val.map(m => {
                         if (m.length > 2) {
                             return m.substr(m.length - 2)
