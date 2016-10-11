@@ -2,7 +2,7 @@
     <tr>
         <td class="wide top aligned" :class="labelClasses">{{{ field.name }}}</td>
         <td class="wide" :class="inputClasses">
-            <component :is="view" :model.sync="model" :field.sync="field" :transparent="true" :read-only="readOnly"></component>
+            <component :is="view" :model.sync="model" :field.sync="field" :transparent="transparent" :read-only="readOnly"></component>
         </td>
     </tr>
 </template>
@@ -14,6 +14,7 @@
     import Textarea from './fields/Textarea.vue'
     import CroudSelect from './fields/Select.vue'
     import CroudRadio from './fields/Radio.vue'
+    import SortCode from './fields/SortCode.vue'
 
     import General from './fields/General.vue'
 
@@ -38,6 +39,9 @@
                     }
                 },
             },
+            transparent: {
+                default: true,
+            },
         },
 
         computed: {
@@ -57,7 +61,7 @@
                 if (['select', 'radio'].indexOf(this.field.field_type) !== -1) {
                     return `croud-${this.field.field_type}`
                 }
-                if (['text', 'number', 'multi-checkbox', 'textarea'].indexOf(this.field.field_type) !== -1) {
+                if (['text', 'number', 'multi-checkbox', 'textarea', 'sort-code'].indexOf(this.field.field_type) !== -1) {
                     return this.field.field_type
                 }
                 return 'general'
@@ -72,6 +76,7 @@
             CroudSelect,
             CroudRadio,
             General,
+            SortCode,
         },
     }
 </script>
