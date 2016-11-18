@@ -13,9 +13,9 @@
     import MultiCheckbox from './fields/MultiCheckbox.vue'
     import Textarea from './fields/Textarea.vue'
     import CroudSelect from './fields/Select.vue'
+    import SearchSelect from './fields/SearchSelect.vue'
     import CroudRadio from './fields/Radio.vue'
     import SortCode from './fields/SortCode.vue'
-
     import General from './fields/General.vue'
 
     export default {
@@ -61,7 +61,7 @@
                 if (['select', 'radio'].indexOf(this.field.field_type) !== -1) {
                     return `croud-${this.field.field_type}`
                 }
-                if (['text', 'number', 'multi-checkbox', 'textarea', 'sort-code'].indexOf(this.field.field_type) !== -1) {
+                if (['search-select', 'text', 'number', 'multi-checkbox', 'textarea', 'sort-code'].indexOf(this.field.field_type) !== -1) {
                     return this.field.field_type
                 }
                 return 'general'
@@ -77,6 +77,7 @@
             CroudRadio,
             General,
             SortCode,
+            SearchSelect,
         },
     }
 </script>
