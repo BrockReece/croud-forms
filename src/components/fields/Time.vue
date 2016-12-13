@@ -19,7 +19,8 @@
                     return this.model.format('HH:mm:ss')
                 },
                 set(val) {
-                    this.model = moment(val)
+                    val = val.split(':')
+                    this.model = moment().hours(val[0]).minutes(val[1] ? val[1] : 0 ).seconds(0)
                 },
             },
         },
