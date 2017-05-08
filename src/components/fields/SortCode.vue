@@ -1,11 +1,6 @@
-<style scoped>
-    .ui.input input {
-        width: 60px;
-    }
-</style>
-
 <template>
     <div>
+    {{ splitModel }}
         <div class="ui input">
             <span v-if="readOnly">{{ splitModel[0] }}</span>
             <input maxlength="2" @focus="focus(0)" ref=input0 @keyup="autoTab(0)" v-else type="number" :placeholder="placeholder" v-model="splitModel[0]">
@@ -33,6 +28,7 @@
 
         data() {
             return {
+                value: this.model,
                 splitModel: [0, 0, 0],
             }
         },
@@ -47,18 +43,23 @@
                 this.$refs[`input${order}`].select()
             },
         },
+        mounted() {
+            return this.model
+        },
 
         watch: {
-            model() {
-                if (this.model) {
-                    this.$set('splitModel', this.model.split('-'))
-                }
+            value: {
+                deep: true,
+                handler(val) {
+                    this.splitModel = val.split('-')
+                    this.$emit('set-value', this.value)
+                },
             },
 
             splitModel: {
                 deep: true,
                 handler(val) {
-                    this.model = val.map(m => {
+                    this.value = val.map(m => {
                         if (m.length > 2) {
                             return m.substr(m.length - 2)
                         }
@@ -69,3 +70,9 @@
         },
     }
 </script>
+
+<style scoped>
+    .ui.input input {
+        width: 60px;
+    }
+</style>

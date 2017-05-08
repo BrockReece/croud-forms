@@ -19,7 +19,5 @@ module.exports = {
         readOnly: {
             default: false,
         },
-        setValue() {
-        },
     },
 }

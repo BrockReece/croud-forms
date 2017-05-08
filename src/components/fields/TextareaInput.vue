@@ -1,8 +1,8 @@
 <template>
     <div class="ui form">
         <div class="field">
-            <p v-if="readOnly">{{ model }}</p>
-            <textarea v-else type="text" :placeholder="placeholder" v-model="model"></textarea>
+            <p v-if="readOnly">{{ value }}</p>
+            <textarea v-else type="text" :placeholder="placeholder" v-model="value"></textarea>
         </div>
     </div>
 </template>
@@ -11,8 +11,21 @@
     import Input from '../../mixins/Input'
 
     export default {
+        model: {
+            prop: 'model',
+        },
         mixins: [
             Input,
         ],
+        data() {
+            return {
+                value: this.model,
+            }
+        },
+        watch: {
+            value() {
+                this.$emit('set-value', this.value)
+            },
+        },
     }
 </script>

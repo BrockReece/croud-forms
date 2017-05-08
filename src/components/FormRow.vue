@@ -4,7 +4,7 @@
     <tr>
         <td class="wide top aligned" :class="labelClasses">{{ field.name }}</td>
         <td class="wide" :class="inputClasses">
-            <component :is="view" :field="field" :transparent="transparent" :read-only="readOnly" :model="field.field_slug" @setValue="setValue"></component>
+            <component :is="view" :field="field" :transparent="transparent" :read-only="readOnly" :model="model" @set-value="(val) => { $emit('set-value', val) }"></component>
         </td>
     </tr>
     <br><br>
@@ -23,6 +23,11 @@
     import General from './fields/General'
 
     export default {
+        model: {
+            prop: 'model',
+            event: 'set-value',
+        },
+
         props: {
             model: {
                 required: true,
@@ -68,15 +73,6 @@
                 }
                 return 'general'
             },
-            value() {
-                return this.model
-            },
-        },
-
-        watch: {
-            value() {
-                this.$emit('input', this.value)
-            },
         },
 
         components: {
@@ -89,11 +85,6 @@
             General,
             SortCode,
             SearchSelect,
-        },
-        methods: {
-            setValue(val) {
-                this.$emit('value-changed', val)
-            },
         },
     }
 </script>

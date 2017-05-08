@@ -1,23 +1,26 @@
 <template>
-<div>
-    <semantic-radio :disabled="readOnly" 
-                    :model="model" 
-                    :data="options"
-                    @input="sendValue"></semantic-radio>
-                </div>
+    <semantic-radiobutton :disabled="readOnly" 
+                          :model="value" 
+                          :data="options"
+                          @input="value = $event">
+    </semantic-radiobutton>
 </template>
 
 <script>
     import Input from '../../mixins/Input'
 
     export default {
+        data() {
+            return {
+                value: this.model,
+            }
+        },
         mixins: [
             Input,
         ],
-/* eslint-disable */
         computed: {
             options() {
-                return Object.keys(this.field.field_options.select_options).map((value) => {
+                const options = Object.keys(this.field.field_options.select_options).map((value) => {
                     const obj = {
                         // eslint-disable-next-line
                         value: value.replace(/\-/g, '_'),
@@ -25,11 +28,13 @@
                     }
                     return obj
                 })
+
+                return options
             },
         },
-        methods: {
-            sendValue(value) {
-                this.$emit('input', value)
+        watch: {
+            value() {
+                this.$emit('set-value', this.value)
             },
         },
     }

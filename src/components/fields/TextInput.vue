@@ -1,6 +1,6 @@
 <template>
     <div class="ui fluid input" :class="{transparent: transparent}">
-        <span v-if="readOnly">{{ model }}</span>
+        <span v-if="readOnly">{{ value }}</span>
         <input v-else type="text" :placeholder="placeholder" v-model="value">
     </div>
 </template>
@@ -22,8 +22,7 @@
         },
         watch: {
             value() {
-                this.$emit('setValue', this.value)
-                this.$emit('input', this.value)
+                this.$emit('set-value', this.value)
             },
         },
     }

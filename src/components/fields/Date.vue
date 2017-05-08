@@ -1,7 +1,5 @@
 <template>
-    <div>
-    <input type="date" v-model="value" @change="sendValue">
-    </div>
+    <input type="date" v-model="value">
 </template>
 
 <script>
@@ -13,21 +11,26 @@
                 required: true,
             },
         },
-
+        data() {
+            return {
+                value: this.computedValue,
+            }
+        },
         computed: {
-            value: {
+            computedValue: {
                 get() {
                     return this.model.format('YYYY-MM-DD')
                 },
                 set(val) {
-                    this.model = moment(val)
+                    this.value = moment(val)
+                    console.log(moment(val))
                 },
             },
         },
-
-        methods: {
-            sendValue() {
-                this.$emit('input', this.model)
+        watch: {
+            moment() {
+                console.log(this.value)
+                this.$emit('set-value', this.value)
             },
         },
     }
