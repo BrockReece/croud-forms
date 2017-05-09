@@ -1,33 +1,29 @@
 <template>
-<div>
-    <input type="datetime-local" v-model="value" @change="sendValue">
-    </div>
+    <input type="datetime-local" v-model="value">
 </template>
 
 <script>
     import moment from 'moment'
 
     export default {
+        model: {
+            prop: 'model',
+            event: 'set-value',
+        },
+
         props: {
             model: {
                 required: true,
             },
         },
-
         computed: {
             value: {
                 get() {
-                    return this.model.format('YYYY-MM-DD[T]HH:mm')
+                    return moment(this.model).format('YYYY-MM-DD[T]HH:mm')
                 },
                 set(val) {
-                    this.model = moment(val)
+                    this.$emit('set-value', moment(val))
                 },
-            },
-        },
-
-        methods: {
-            sendValue() {
-                this.$emit('input', this.model)
             },
         },
     }

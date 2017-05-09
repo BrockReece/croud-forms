@@ -1,17 +1,15 @@
 <template>
-    <div>
-        <hello></hello>
-    </div>
+    <example></example>
 </template>
 
 <script>
 
-import Hello from './components/Hello'
+import Example from './components/Example'
 
 export default {
     name: 'app',
     components: {
-        Hello,
+        Example,
     },
 }
 

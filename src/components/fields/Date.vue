@@ -6,31 +6,24 @@
     import moment from 'moment'
 
     export default {
+        model: {
+            prop: 'model',
+            event: 'set-value',
+        },
+
         props: {
             model: {
                 required: true,
             },
         },
-        data() {
-            return {
-                value: this.computedValue,
-            }
-        },
         computed: {
-            computedValue: {
+            value: {
                 get() {
-                    return this.model.format('YYYY-MM-DD')
+                    return moment(this.model).format('YYYY-MM-DD')
                 },
                 set(val) {
-                    this.value = moment(val)
-                    console.log(moment(val))
+                    this.$emit('set-value', moment(val))
                 },
-            },
-        },
-        watch: {
-            moment() {
-                console.log(this.value)
-                this.$emit('set-value', this.value)
             },
         },
     }

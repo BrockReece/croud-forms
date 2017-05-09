@@ -1,10 +1,8 @@
 <template>
-<div>
-    <div class="ui input" :class="{transparent: transparent}">
+    <div class="ui fluid input" :class="{transparent: transparent}">
         <span v-if="readOnly">{{ model }}</span>
         <general-input v-else v-model="value" :value="value" :tag="type"></general-input>
     </div>
-</div>
 </template>
 
 <script>
