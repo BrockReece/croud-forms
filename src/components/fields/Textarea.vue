@@ -11,9 +11,6 @@
     import Input from '../../mixins/Input'
 
     export default {
-        model: {
-            prop: 'model',
-        },
         mixins: [
             Input,
         ],

@@ -10,9 +10,6 @@
     import GeneralInput from './Input'
 
     export default {
-        model: {
-            prop: 'model',
-        },
         components: {
             GeneralInput,
         },
