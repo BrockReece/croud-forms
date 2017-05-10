@@ -1,5 +1,5 @@
 <template>
-    <div class="ui input" :class="{transparent: transparent}">
+    <div class="ui sort-code input" :class="{transparent: transparent}">
         <span v-if="readOnly">{{ value }}</span>
         <cleave v-else name="sort_code" :options="cleaveSettings" v-model="value" />
     </div>
