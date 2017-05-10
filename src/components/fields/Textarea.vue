@@ -1,7 +1,9 @@
 <template>
-    <div class="ui fluid input" :class="{transparent: transparent}">
-        <span v-if="readOnly">{{ value }}</span>
-        <input v-else type="text" :placeholder="placeholder" v-model="value">
+    <div class="ui form">
+        <div class="field">
+            <p v-if="readOnly">{{ value }}</p>
+            <textarea v-else type="text" :placeholder="placeholder" v-model="value"></textarea>
+        </div>
     </div>
 </template>
 
@@ -9,9 +11,6 @@
     import Input from '../../mixins/Input'
 
     export default {
-        model: {
-            prop: 'model',
-        },
         mixins: [
             Input,
         ],

@@ -1,4 +1,9 @@
 module.exports = {
+    model: {
+        prop: 'model',
+        event: 'set-value',
+    },
+
     props: {
         field: {
             required: true,

@@ -8,10 +8,10 @@
 </template>
 
 <script>
-    import TextInput from './fields/TextInput'
+    import CroudText from './fields/Text'
     import Number from './fields/Number'
     import MultiCheckbox from './fields/MultiCheckbox'
-    import TextareaInput from './fields/TextareaInput'
+    import CroudTextarea from './fields/Textarea'
     import CroudSelect from './fields/Select'
     import SearchSelect from './fields/SearchSelect'
     import CroudRadio from './fields/Radio'
@@ -61,10 +61,10 @@
                 return classes
             },
             view() {
-                if (['select', 'radio'].indexOf(this.field.field_type) !== -1) {
+                if (['select', 'radio', 'textarea', 'text'].indexOf(this.field.field_type) !== -1) {
                     return `croud-${this.field.field_type}`
                 }
-                if (['search-select', 'text-input', 'number', 'multi-checkbox', 'textarea-input', 'sort-code'].indexOf(this.field.field_type) !== -1) {
+                if (['search-select', 'number', 'multi-checkbox', 'sort-code'].indexOf(this.field.field_type) !== -1) {
                     return this.field.field_type
                 }
                 return 'general'
@@ -73,8 +73,8 @@
 
         components: {
             Number,
-            TextInput,
-            TextareaInput,
+            CroudText,
+            CroudTextarea,
             MultiCheckbox,
             CroudSelect,
             CroudRadio,

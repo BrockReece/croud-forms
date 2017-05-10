@@ -2,40 +2,34 @@
     <div>
         <h2 class="ui dividing header">Form Row:</h2>
         <table class="ui very basic table">
-            <tr is="form-row" v-for="field in contactFields" :field="field" v-model="formRowData[field.field_slug]"></tr>
+            <tr is="croud-form-row" v-for="field in contactFields" :field="field" v-model="formRowData[field.field_slug]"></tr>
         </table>
 
         <pre>{{ formRowData }}</pre>
 
         <h2 class="ui dividing header">Moment Components:</h2>
         <h3>DateTime</h3>
-        <date-time-moment v-model="dateTimeData"></date-time-moment>
+        <croud-date-time v-model="dateTimeData"></croud-date-time>
         <pre>{{ dateTimeData.format('lll') }}</pre>
-        
+
         <h3>Date</h3>
-        <date-moment v-model="dateData"></date-moment>
+        <croud-date v-model="dateData"></croud-date>
         <pre>{{ dateData.format('DD/MM/YY') }}</pre>
 
         <h3>Time</h3>
-        <time-moment v-model="timeData"></time-moment>
+        <croud-time v-model="timeData"></croud-time>
         <pre>{{ timeData.format('HH:mm:ss') }}</pre>
     </div>
 </template>
 
 <script>
+import Vue from 'vue'
 import moment from 'moment'
-import FormRow from '../components/FormRow'
-import DateTimeMoment from './fields/DateTime'
-import DateMoment from './fields/Date'
-import TimeMoment from './fields/Time'
+import CroudForms from '../croud-forms'
+
+Vue.use(CroudForms)
 
 export default {
-    components: {
-        FormRow,
-        DateTimeMoment,
-        DateMoment,
-        TimeMoment,
-    },
     data() {
         return {
             formRowData: {
@@ -59,12 +53,12 @@ export default {
             contactFields: [
                 {
                     name: 'Text-Input',
-                    field_type: 'text-input',
+                    field_type: 'text',
                     field_slug: 'textInput',
                 },
                 {
                     name: 'Text-Area',
-                    field_type: 'textarea-input',
+                    field_type: 'textarea',
                     field_slug: 'textArea',
                 },
                 {
