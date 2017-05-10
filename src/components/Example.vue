@@ -11,7 +11,7 @@
         <h3>DateTime</h3>
         <date-time-moment v-model="dateTimeData"></date-time-moment>
         <pre>{{ dateTimeData.format('lll') }}</pre>
-        
+
         <h3>Date</h3>
         <date-moment v-model="dateData"></date-moment>
         <pre>{{ dateData.format('DD/MM/YY') }}</pre>
@@ -59,12 +59,12 @@ export default {
             contactFields: [
                 {
                     name: 'Text-Input',
-                    field_type: 'text-input',
+                    field_type: 'text',
                     field_slug: 'textInput',
                 },
                 {
                     name: 'Text-Area',
-                    field_type: 'textarea-input',
+                    field_type: 'textarea',
                     field_slug: 'textArea',
                 },
                 {
