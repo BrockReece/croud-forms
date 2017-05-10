@@ -1,5 +1,5 @@
 <template>
-    <div class="ui fluid input" :class="{transparent: transparent}">
+    <div class="ui input" :class="{transparent: transparent}">
         <span v-if="readOnly">{{ value }}</span>
         <cleave v-else name="sort_code" :options="cleaveSettings" v-model="value" />
     </div>
@@ -41,9 +41,3 @@
         },
     }
 </script>
-
-<style scoped>
-    .ui.input input {
-        width: 60px;
-    }
-</style>
