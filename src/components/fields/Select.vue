@@ -1,5 +1,5 @@
 <template>
-    <semantic-form-dropdown :placeholder="field.name"
+    <semantic-form-dropdown :placeholder="placeholder"
                             :value="value"
                             :options="options"
                             :fluid="true"

@@ -1,8 +1,8 @@
 <template>
     <tr>
-        <td class="wide top aligned" :class="labelClasses">{{ field.name }}</td>
+        <td class="wide top aligned" :class="labelClasses">{{ field.field_name }}</td>
         <td class="wide" :class="inputClasses">
-            <component :is="view" :field="field" :transparent="transparent" :read-only="readOnly" :model="model" @set-value="(val) => { $emit('set-value', val) }"></component>
+            <component :is="view" :field="field" :placeholder="field.field_name" :transparent="transparent" :read-only="readOnly" :model="model" @set-value="(val) => { $emit('set-value', val) }"></component>
         </td>
     </tr>
 </template>
