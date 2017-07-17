@@ -24,5 +24,17 @@ module.exports = {
         readOnly: {
             default: false,
         },
+
+        validation: {
+            required: true,
+        },
+    },
+
+    watch: {
+        value() {
+            if (this.validation.$touch) {
+                this.validation.$touch()
+            }
+        },
     },
 }
