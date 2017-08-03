@@ -12,6 +12,11 @@
                 type: Boolean,
                 default: false,
             },
+
+            validations: {
+                type: Object,
+                default: {},
+            },
         },
 
         render(h) {
@@ -34,7 +39,8 @@
                     props: {
                         field,
                         model: this.value[field.field_slug],
-                        readOnly: this.readOnly,
+                        readOnly: this.readOnly || field.readOnly,
+                        validation: this.validations[field.field_slug] || {},
                     },
 
                     on: {

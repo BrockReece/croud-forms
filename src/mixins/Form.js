@@ -71,6 +71,8 @@ export default {
             if (error.msg) return error.msg
 
             switch (error.type) {
+            case 'required':
+                return 'This field is mandatory'
             case 'numeric':
                 return 'Must be a numeric value'
             case 'minLength':

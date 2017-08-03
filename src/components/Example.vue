@@ -1,6 +1,6 @@
 <template>
     <div>
-        <croud-form-builder :read-only="false" :schema='contactFields' v-model="formRowData"></croud-form-builder>
+        <croud-form-builder :read-only="false" :schema='contactFields' v-model="formRowData" :validations="$v.formRowData"></croud-form-builder>
         <h2 class="ui dividing header">Form Row:</h2>
         <table class="ui very basic table">
             <tr :read-only="true" is="croud-form-row" v-for="field in contactFields" :field="field" v-model="formRowData[field.field_slug]"></tr>
@@ -26,11 +26,33 @@
 <script>
 import Vue from 'vue'
 import moment from 'moment'
+import { validationMixin } from 'vuelidate'
+import { required, minLength, numeric } from 'vuelidate/lib/validators'
+
 import CroudForms from '../croud-forms'
 
 Vue.use(CroudForms)
 
 export default {
+    mixins: [validationMixin],
+
+    validations: {
+        formRowData: {
+            textInput: {
+                required,
+                minLength: minLength(4),
+            },
+            textArea: {
+                required,
+                minLength: minLength(20),
+            },
+            number: {
+                required,
+                numeric,
+            },
+        },
+    },
+
     data() {
         return {
             formRowData: {
