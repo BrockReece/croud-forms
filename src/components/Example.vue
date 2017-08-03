@@ -1,8 +1,9 @@
 <template>
     <div>
+        <croud-form-builder :read-only="false" :schema='contactFields' v-model="formRowData"></croud-form-builder>
         <h2 class="ui dividing header">Form Row:</h2>
         <table class="ui very basic table">
-            <tr is="croud-form-row" v-for="field in contactFields" :field="field" v-model="formRowData[field.field_slug]"></tr>
+            <tr :read-only="true" is="croud-form-row" v-for="field in contactFields" :field="field" v-model="formRowData[field.field_slug]"></tr>
         </table>
 
         <pre>{{ formRowData }}</pre>
@@ -52,17 +53,32 @@ export default {
             timeData: moment(),
             contactFields: [
                 {
-                    name: 'Text-Input',
+                    field_name: 'Text-Input',
                     field_type: 'text',
                     field_slug: 'textInput',
                 },
                 {
-                    name: 'Text-Area',
-                    field_type: 'textarea',
-                    field_slug: 'textArea',
+                    class: 'ui very padded basic segment two fields',
+                    children: [
+                        {
+                            class: 'two fields',
+                            children: [
+                                {
+                                    field_name: 'Text-Input',
+                                    field_type: 'text',
+                                    field_slug: 'textInput',
+                                },
+                                {
+                                    field_name: 'Text-Area',
+                                    field_type: 'textarea',
+                                    field_slug: 'textArea',
+                                },
+                            ],
+                        },
+                    ],
                 },
                 {
-                    name: 'Search-Select',
+                    field_name: 'Search-Select',
                     field_type: 'search-select',
                     field_slug: 'searchSelect',
                     field_options: {
@@ -74,17 +90,18 @@ export default {
                     },
                 },
                 {
-                    name: 'Number',
+                    field_name: 'Number',
                     field_type: 'number',
                     field_slug: 'number',
                 },
                 {
-                    name: 'Sort Code',
+
+                    field_name: 'Sort Code',
                     field_type: 'sort-code',
                     field_slug: 'sortCode',
                 },
                 {
-                    name: 'Multi-checkbox',
+                    field_name: 'Multi-checkbox',
                     field_type: 'multi-checkbox',
                     field_slug: 'platforms',
                     field_options: {
@@ -96,7 +113,7 @@ export default {
                     },
                 },
                 {
-                    name: 'Radio',
+                    field_name: 'Radio',
                     field_type: 'radio',
                     field_slug: 'radio',
                     field_options: {
@@ -108,7 +125,7 @@ export default {
                     },
                 },
                 {
-                    name: 'Select',
+                    field_name: 'Select',
                     field_type: 'select',
                     field_slug: 'select',
                     field_options: {
@@ -120,7 +137,7 @@ export default {
                     },
                 },
                 {
-                    name: 'General',
+                    field_name: 'General',
                     field_type: 'date',
                     field_slug: 'general',
                 },
