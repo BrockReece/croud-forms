@@ -1,6 +1,7 @@
 import CroudText from '../components/fields/Text'
 import Number from '../components/fields/Number'
 import MultiCheckbox from '../components/fields/MultiCheckbox'
+import Checkbox from '../components/fields/Checkbox'
 import CroudTextarea from '../components/fields/Textarea'
 import CroudSelect from '../components/fields/Select'
 import SearchSelect from '../components/fields/SearchSelect'
@@ -45,7 +46,7 @@ export default {
             if (['select', 'radio', 'textarea', 'text'].indexOf(this.field.field_type) !== -1) {
                 return `croud-${this.field.field_type}`
             }
-            if (['search-select', 'number', 'multi-checkbox', 'sort-code'].indexOf(this.field.field_type) !== -1) {
+            if (['search-select', 'number', 'checkbox', 'multi-checkbox', 'sort-code'].indexOf(this.field.field_type) !== -1) {
                 return this.field.field_type
             }
             return 'general'
@@ -57,6 +58,7 @@ export default {
         CroudText,
         CroudTextarea,
         MultiCheckbox,
+        Checkbox,
         CroudSelect,
         CroudRadio,
         General,
