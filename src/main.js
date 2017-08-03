@@ -2,7 +2,7 @@ import Vue from 'vue'
 import App from './App'
 
 Vue.config.productionTip = false
-Vue.use(require('vue-semantic'))
+Vue.use(require('croud-vue-semantic'))
 
 /* eslint-disable no-new */
 new Vue({
