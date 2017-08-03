@@ -15,7 +15,9 @@
 
             validations: {
                 type: Object,
-                default: {},
+                default() {
+                    return {}
+                },
             },
         },
 
