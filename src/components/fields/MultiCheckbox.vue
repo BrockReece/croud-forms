@@ -5,7 +5,9 @@
                 <semantic-checkbox type="checkbox"
                                    v-model="checked[option.value]"
                                    :label="option.field_name"
-                                   @checkbox-clicked="setValue($event, option)">
+                                   @checkbox-clicked="setValue($event, option)"
+                                   :disabled="readOnly"
+                                   >
                 </semantic-checkbox>
             </div>
         </div>
