@@ -1,26 +1,31 @@
 <template>
+<div>
     <input type="Time" v-model="value">
+</div>
 </template>
 
 <script>
     import moment from 'moment'
 
     export default {
+        model: {
+            prop: 'model',
+            event: 'set-value',
+        },
+
         props: {
             model: {
                 required: true,
-                twoWay: true,
-            }
+            },
         },
-
         computed: {
             value: {
                 get() {
-                    return this.model.format('HH:mm:ss')
+                    return moment(this.model).format('HH:mm:ss')
                 },
                 set(val) {
-                    val = val.split(':')
-                    this.model = moment().hours(val[0]).minutes(val[1] ? val[1] : 0 ).seconds(0)
+                    const time = val.split(':')
+                    this.$emit('set-value', moment().hours(time[0]).minutes(time[1] ? time[1] : 0).seconds(0))
                 },
             },
         },
