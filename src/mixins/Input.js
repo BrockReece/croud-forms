@@ -30,6 +30,17 @@ module.exports = {
         },
     },
 
+    computed: {
+        value: {
+            get() {
+                return this.model
+            },
+            set(val) {
+                this.$emit('set-value', val)
+            },
+        },
+    },
+
     watch: {
         value() {
             if (this.validation.$touch) {

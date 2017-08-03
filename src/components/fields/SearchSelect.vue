@@ -14,11 +14,6 @@
     import Input from '../../mixins/Input'
 
     export default {
-        data() {
-            return {
-                value: this.model,
-            }
-        },
         mixins: [
             Input,
         ],
@@ -34,11 +29,6 @@
                 })
 
                 return options
-            },
-        },
-        watch: {
-            value() {
-                this.$emit('set-value', this.value)
             },
         },
     }

@@ -13,21 +13,17 @@
         components: {
             GeneralInput,
         },
+
         mixins: [
             Input,
         ],
+
         data() {
             return {
-                value: this.model,
                 type: this.field.field_type,
             }
         },
-        watch: {
-            value() {
-                this.$emit('set-Value', this.value)
-                this.$emit('input', this.value)
-            },
-        },
+
     }
 
 </script>

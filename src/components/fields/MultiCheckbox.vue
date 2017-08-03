@@ -36,15 +36,11 @@
                     return obj
                 })
             },
-            checked() {
-                return this.model
-            },
-        },
-
-        watch: {
             checked: {
-                deep: true,
-                handler(val) {
+                get() {
+                    return this.model
+                },
+                set(val) {
                     this.$emit('set-value', val)
                 },
             },

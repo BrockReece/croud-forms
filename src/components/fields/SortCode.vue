@@ -18,12 +18,6 @@
             Cleave,
         },
 
-        data() {
-            return {
-                value: this.model,
-            }
-        },
-
         computed: {
             cleaveSettings() {
                 return {
@@ -31,12 +25,6 @@
                     delimiter: '-',
                     numericOnly: true,
                 }
-            },
-        },
-
-        watch: {
-            value() {
-                this.$emit('set-value', this.value)
             },
         },
     }

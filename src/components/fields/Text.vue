@@ -12,15 +12,5 @@
         mixins: [
             Input,
         ],
-        data() {
-            return {
-                value: this.model,
-            }
-        },
-        watch: {
-            value() {
-                this.$emit('set-value', this.value)
-            },
-        },
     }
 </script>

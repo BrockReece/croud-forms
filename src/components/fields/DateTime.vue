@@ -6,16 +6,6 @@
     import moment from 'moment'
 
     export default {
-        model: {
-            prop: 'model',
-            event: 'set-value',
-        },
-
-        props: {
-            model: {
-                required: true,
-            },
-        },
         computed: {
             value: {
                 get() {

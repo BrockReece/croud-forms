@@ -13,11 +13,6 @@
             event: 'set-value',
         },
 
-        props: {
-            model: {
-                required: true,
-            },
-        },
         computed: {
             value: {
                 get() {

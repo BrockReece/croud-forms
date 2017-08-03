@@ -12,14 +12,10 @@
     import Input from '../../mixins/Input'
 
     export default {
-        data() {
-            return {
-                value: this.model,
-            }
-        },
         mixins: [
             Input,
         ],
+
         computed: {
             options() {
                 const options = Object.keys(this.field.field_options.select_options).map((value) => {
@@ -32,11 +28,6 @@
                 })
 
                 return options
-            },
-        },
-        watch: {
-            value() {
-                this.$emit('set-value', this.value)
             },
         },
     }
