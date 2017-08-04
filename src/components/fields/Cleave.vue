@@ -1,7 +1,7 @@
 <template>
     <div class="ui fluid input" :class="{transparent: transparent}">
         <span v-if="readOnly">{{ value }}</span>
-        <cleave v-else :name="_uid" :options="cleaveSettings" v-model="value" />
+        <cleave v-else :name="_uid" :options="options" v-model="value" />
     </div>
 </template>
 
@@ -13,15 +13,6 @@
         mixins: [
             Input,
         ],
-
-        props: {
-            cleaveSettings: {
-                type: Object,
-                default() {
-                    return {}
-                },
-            },
-        },
 
         components: {
             Cleave,
@@ -35,6 +26,10 @@
                 set(val) {
                     this.$emit('set-value', val)
                 },
+            },
+
+            options() {
+                return this.field.field_options.cleave_settings
             },
         },
     }
