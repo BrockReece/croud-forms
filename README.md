@@ -46,7 +46,7 @@ The field object is made up of 3 mandatory keys and an additional contextual obj
             },
 
             user: {
-                firstName: '', // this is what
+                firstName: '',
             },
         }
     },
