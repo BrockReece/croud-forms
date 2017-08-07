@@ -68,10 +68,10 @@ Croud-forms provides two different components for displaying the form fields.
 ```
 
 ### Read Only
-Croud-forms allows a read only flag to be passed into any field as a prop
+Croud-forms allows a **read-only** flag to be passed into any field as a prop
 
 ```html
-<croud-form-field :field="field" v-model="user.firstName" :readOnly="true"/>
+<croud-form-field :field="field" v-model="user.firstName" :read-only="true"/>
 ```
 
 ### Vuelidate integration
