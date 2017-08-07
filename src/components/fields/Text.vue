@@ -1,12 +1,12 @@
 <template>
     <div class="ui fluid input" :class="{transparent: transparent}">
-        <span v-if="readOnly">{{ model }}</span>
-        <input v-else type="text" :placeholder="placeholder" v-model="model">
+        <span v-if="readOnly">{{ value }}</span>
+        <input v-else type="text" :placeholder="placeholder" v-model="value">
     </div>
 </template>
 
 <script>
-    import Input from '../../mixins/Input.js'
+    import Input from '../../mixins/Input'
 
     export default {
         mixins: [

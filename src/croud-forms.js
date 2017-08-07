@@ -1,0 +1,17 @@
+const FormBuilder = require('./components/FormBuilder.vue')
+const FormRow = require('./components/FormRow.vue')
+const FormField = require('./components/FormField.vue')
+const DateTime = require('./components/fields/DateTime.vue')
+const Date = require('./components/fields/Date.vue')
+const Time = require('./components/fields/Time.vue')
+
+module.exports = {
+    install(Vue) {
+        Vue.component('croud-form-builder', FormBuilder)
+        Vue.component('croud-form-field', FormField)
+        Vue.component('croud-form-row', FormRow)
+        Vue.component('croud-date-time', DateTime)
+        Vue.component('croud-date', Date)
+        Vue.component('croud-time', Time)
+    },
+}

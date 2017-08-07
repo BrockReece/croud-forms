@@ -1,13 +1,12 @@
-const FormRow = require('./components/FormRow.vue')
-const DateTime = require('./components/fields/DateTime.vue')
-const Date = require('./components/fields/Date.vue')
-const Time = require('./components/fields/Time.vue')
+import Vue from 'vue'
+import App from './App'
 
-module.exports = {
-    install(Vue) {
-        Vue.component('croud-form-row', FormRow)
-        Vue.component('croud-date-time', DateTime)
-        Vue.component('croud-date', Date)
-        Vue.component('croud-time', Time)
-    },
-}
+Vue.config.productionTip = false
+Vue.use(require('croud-vue-semantic'))
+
+/* eslint-disable no-new */
+new Vue({
+    el: '#app',
+    template: '<App/>',
+    components: { App },
+})
