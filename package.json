@@ -3,7 +3,7 @@
   "version": "1.1.1",
   "description": "Croud form building blocks",
   "author": "Croud",
-  "private": true,
+  "private": false,
   "main": "./src/croud-forms.js",
   "scripts": {
     "dev": "node build/dev-server.js",
