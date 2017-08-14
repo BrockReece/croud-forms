@@ -86,11 +86,14 @@ export default {
                             class: 'two fields',
                             children: [
                                 {
+                                    class: 'four wide',
                                     field_name: 'Text-Input',
                                     field_type: 'text',
                                     field_slug: 'textInput',
+                                    suppressValidationErrors: true,
                                 },
                                 {
+                                    class: 'twelve wide',
                                     field_name: 'Text-Area',
                                     field_type: 'textarea',
                                     field_slug: 'textArea',

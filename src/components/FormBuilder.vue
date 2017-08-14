@@ -13,6 +13,11 @@
                 default: false,
             },
 
+            suppressValidationErrors: {
+                type: Boolean,
+                default: false,
+            },
+
             validations: {
                 type: Object,
                 default() {
@@ -43,6 +48,7 @@
                         model: this.value[field.field_slug],
                         readOnly: this.readOnly || field.readOnly,
                         validation: this.validations[field.field_slug] || {},
+                        suppressValidationErrors: this.suppressValidationErrors || field.suppressValidationErrors,
                     },
 
                     on: {
@@ -50,6 +56,8 @@
                             this.value[field.field_slug] = val
                         },
                     },
+
+                    class: field.class,
                 })
             },
 
