@@ -57,7 +57,7 @@
                         },
                     },
 
-                    // class: field.class,
+                    class: field.class,
                 })
             },
 
