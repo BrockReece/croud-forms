@@ -34,6 +34,10 @@ export default {
                 return {}
             },
         },
+        suppressValidationErrors: {
+            type: Boolean,
+            default: false,
+        },
     },
 
     computed: {
