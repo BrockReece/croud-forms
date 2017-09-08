@@ -1,9 +1,9 @@
-const FormBuilder = require('./components/FormBuilder.vue')
-const FormRow = require('./components/FormRow.vue')
-const FormField = require('./components/FormField.vue')
-const DateTime = require('./components/fields/DateTime.vue')
-const Date = require('./components/fields/Date.vue')
-const Time = require('./components/fields/Time.vue')
+import FormBuilder from './components/FormBuilder.vue'
+import FormRow from './components/FormRow.vue'
+import FormField from './components/FormField.vue'
+import DateTime from './components/fields/DateTime.vue'
+import Date from './components/fields/Date.vue'
+import Time from './components/fields/Time.vue'
 
 module.exports = {
     install(Vue) {
