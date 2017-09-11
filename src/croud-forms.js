@@ -5,7 +5,7 @@ import DateTime from './components/fields/DateTime.vue'
 import Date from './components/fields/Date.vue'
 import Time from './components/fields/Time.vue'
 
-module.exports = {
+export default {
     install(Vue) {
         Vue.component('croud-form-builder', FormBuilder)
         Vue.component('croud-form-field', FormField)
