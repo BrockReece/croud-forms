@@ -57,6 +57,9 @@ export default {
         return {
             formRowData: {
                 textInput: 'Text',
+                arrayInput: [
+                    'test',
+                ],
                 textArea: 'TextArea',
                 number: 1,
                 platforms: {
@@ -78,6 +81,14 @@ export default {
                     field_name: 'Text-Input',
                     field_type: 'text',
                     field_slug: 'textInput',
+                },
+                {
+                    field_name: 'Array-Input',
+                    field_type: 'array-input',
+                    field_slug: 'arrayInput',
+                    field_options: {
+                        max: 5,
+                    },
                 },
                 {
                     class: 'ui very padded basic segment two fields',
