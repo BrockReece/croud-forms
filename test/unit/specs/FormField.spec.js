@@ -1,7 +1,7 @@
 import { mount } from 'vue-test-utils'
 import FormField from '@/components/FormField'
 
-const fieldTypes = ['text', 'number']
+const fieldTypes = ['text', 'number', 'checkbox']
 
 describe('FormField component', () => {
     describe('should render correct field type', () => {

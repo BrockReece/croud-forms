@@ -9,6 +9,17 @@ exports[`FormField component should render a non transparent input 1`] = `
 </tr>
 `;
 
+exports[`FormField component should render correct field type checkbox 1`] = `
+<tr>
+    <td class="wide top aligned nine">First name</td>
+    <td class="wide severn">
+        <div class="ui input transparent">
+            <semantic-checkbox type="checkbox"></semantic-checkbox>
+        </div>
+    </td>
+</tr>
+`;
+
 exports[`FormField component should render correct field type number 1`] = `
 <tr>
     <td class="wide top aligned nine">First name</td>

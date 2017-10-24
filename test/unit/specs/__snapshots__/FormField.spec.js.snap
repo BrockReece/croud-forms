@@ -6,6 +6,14 @@ exports[`FormField component should render a transparent input 1`] = `
 </div>
 `;
 
+exports[`FormField component should render correct field type checkbox 1`] = `
+<div class="ui field"><label>First name</label>
+    <div class="ui input">
+        <semantic-checkbox type="checkbox"></semantic-checkbox>
+    </div>
+</div>
+`;
+
 exports[`FormField component should render correct field type number 1`] = `
 <div class="ui field"><label>First name</label>
     <div class="ui input"><input type="number" placeholder="First name"></div>
