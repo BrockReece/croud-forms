@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FormField component should render a transparent input 1`] = `
+<div class="ui field"><label>First name</label>
+    <div class="ui fluid input transparent"><input type="text" placeholder="First name"></div>
+</div>
+`;
+
+exports[`FormField component should render correct field type number 1`] = `
+<div class="ui field"><label>First name</label>
+    <div class="ui input"><input type="number" placeholder="First name"></div>
+</div>
+`;
+
+exports[`FormField component should render correct field type text 1`] = `
+<div class="ui field"><label>First name</label>
+    <div class="ui fluid input"><input type="text" placeholder="First name"></div>
+</div>
+`;

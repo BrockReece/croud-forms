@@ -105,6 +105,9 @@
       "^.+\\.js$": "<rootDir>/node_modules/babel-jest",
       ".*\\.(vue)$": "<rootDir>/node_modules/jest-vue"
     },
+    "transformIgnorePatterns": [
+        "node_modules/(?!vue-cleave|vue-quill)"
+      ],
     "moduleNameMapper": {
       "^@/(.*)$": "<rootDir>/src/$1"
     },
