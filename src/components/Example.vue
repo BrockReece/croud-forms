@@ -32,6 +32,9 @@ import { required, minLength, numeric } from 'vuelidate/lib/validators'
 import CroudForms from '../croud-forms'
 
 Vue.use(CroudForms)
+Vue.component('test-component', {
+    template: '<div>hello world</div>',
+})
 
 export default {
     mixins: [validationMixin],
@@ -74,6 +77,17 @@ export default {
             dateData: moment(),
             timeData: moment(),
             contactFields: [
+                {
+                    field_name: 'Test Component',
+                    field_type: 'text',
+                    field_slug: 'custom',
+                    render: (h) => h('div', {
+                        class: 'ui field',
+                    }, [
+                        h('label', 'Test Component'),
+                        h('test-component'),
+                    ]),
+                },
                 {
                     field_name: 'Text-Input',
                     field_type: 'text',
