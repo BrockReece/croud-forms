@@ -182,3 +182,35 @@ export default {
 }
 
 ```
+
+### Custom components
+If you need to create a more complicated form field than this package provides, you can add pass a [render method](https://vuejs.org/v2/guide/render-function.html) through to the form builder. If you want to to use a custom component, you will need to globally register it before using it in the render method.
+
+```js
+// Globally register custom component
+Vue.component('test-component', {
+    template: '<div>hello world</div>',
+})
+...
+// Form builder config
+{
+  field_name: 'Test Component',
+  field_type: 'text',
+  field_slug: 'custom',
+  render: (h) => h('div', {
+    class: 'ui field',
+  }, [
+    h('label', 'Test Component'),
+    h('test-component'),
+  ]),
+},
+```
+
+Which will produce the following markup
+
+```html
+<div class="ui field">
+  <label>Test Component</label>
+  <div>hello world</div>
+</div>
+```
