@@ -42,6 +42,7 @@
 
         methods: {
             buildNode(h, field) {
+                if (field.render) return field.render(h)
                 return h('croud-form-field', {
                     props: {
                         field,
