@@ -1,5 +1,6 @@
 # croud-forms
 [![npm version](https://badge.fury.io/js/croud-forms.svg)](https://badge.fury.io/js/croud-forms)
+[![Build Status](https://travis-ci.org/CroudSupport/croud-forms.svg?branch=master)](https://travis-ci.org/CroudSupport/croud-forms)
 
 A package for generating form inputs based on a JS object.
 
