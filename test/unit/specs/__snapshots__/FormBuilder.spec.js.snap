@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FormBuilder component should recursively render children 1`] = `
+<div class="ui form">
+    <div class="two fields">
+        <croud-form-field></croud-form-field>
+        <div class="two fields">
+            <croud-form-field></croud-form-field>
+        </div>
+    </div>
+</div>
+`;
+
+exports[`FormBuilder component should render children 1`] = `
+<div class="ui form">
+    <div class="two fields">
+        <croud-form-field></croud-form-field>
+        <croud-form-field></croud-form-field>
+    </div>
+</div>
+`;
+
+exports[`FormBuilder component should render from method 1`] = `
+<div class="ui form">
+    <div class="ui field"><label>Test</label><input></div>
+</div>
+`;
+
+exports[`FormBuilder component should render simple form 1`] = `
+<div class="ui form">
+    <croud-form-field></croud-form-field>
+</div>
+`;
